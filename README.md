@@ -1,8 +1,8 @@
-📚 Book Recommender App
+# 📚 Book Recommender App
 
 A React app that suggests books based on your genre, mood, and reading level using Google Gemini API.
 
-🔹 Features
+# 🔹 Features
 
 Select Genre, Mood, and Reading Level.
 
@@ -20,13 +20,13 @@ Displays results in expandable details sections.
 
 Handles loading and error states.
 
-🌐 Demo
+# 🌐 Demo
 
 Hosted App: [Insert your Vercel link]
 
 GitHub Repo: [Insert your GitHub link]
 
-⚡ Setup
+# ⚡ Setup
 
 Clone the repo
 
@@ -50,7 +50,7 @@ Run the app
 
 npm run dev
 
-🛠️ Technologies
+# 🛠️ Technologies
 
 React (v18+)
 
@@ -60,13 +60,13 @@ Vite
 
 JSON for genre & mood data
 
-🔗 References
+# 🔗 References
 
 Gemini API Docs
 
 React Hooks Guide
 
-💡 Notes
+# 💡 Notes
 
 Make sure your API key supports the generateText endpoint.
 
