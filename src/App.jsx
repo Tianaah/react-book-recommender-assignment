@@ -3,7 +3,6 @@ import SelectField from "./components/select.jsx";
 import listOfGenreOption from "./store/genre.json";
 import listOfMoodOption from "./store/mood.json";
 
-// Initial state
 const initialState = {
   genre: "",
   mood: "",
@@ -13,7 +12,6 @@ const initialState = {
   error: null,
 };
 
-// Reducer
 function reducer(state, action) {
   switch (action.type) {
     case "SET_GENRE":
@@ -46,24 +44,34 @@ export default function App() {
 
     try {
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/text-bison-001:generateText?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            prompt: `Recommend 6 books for a ${level} ${genre} reader feeling ${mood}. List each book on a separate line and explain why.`,
-            temperature: 0.7,
-            max_output_tokens: 500,
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `Recommend 6 books for a ${level} ${genre} reader feeling ${mood}. List each book separately.`,
+                  },
+                ],
+              },
+            ],
           }),
         },
       );
 
       const data = await response.json();
-      console.log("Full API response:", data); // Debugging
+      console.log("Full API response:", data);
 
-      // Make sure we parse the text safely
+      if (!response.ok) {
+        throw new Error(data.error?.message || "API request failed");
+      }
+
       const text =
-        data?.candidates?.[0]?.output || "No recommendation received.";
+        data?.candidates?.[0]?.content?.parts?.[0]?.text ??
+        "No recommendation received.";
 
       const books = text
         .split("\n")
