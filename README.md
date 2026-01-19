@@ -22,15 +22,15 @@ Handles loading and error states.
 
 # 🌐 Demo
 
-Hosted App: [Insert your Vercel link]
+Hosted App: [[Insert your Vercel link](https://vercel.com/christianas-projects-53c2c7f3/react-book-recommender-assignment)]
 
-GitHub Repo: [Insert your GitHub link]
+GitHub Repo: [[Insert your GitHub link](https://github.com/Tianaah/react-book-recommender-assignment)]
 
 # ⚡ Setup
 
-Clone the repo
+Create the repo
 
-git clone <your-repo-link>
+git remote add <repo-link>
 cd <repo-folder>
 
 
