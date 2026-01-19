@@ -1,16 +1,73 @@
-# React + Vite
+📚 Book Recommender App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React app that suggests books based on your genre, mood, and reading level using Google Gemini API.
 
-Currently, two official plugins are available:
+🔹 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Select Genre, Mood, and Reading Level.
 
-## React Compiler
+Fetches AI-generated book recommendations.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Optimized with React hooks:
 
-## Expanding the ESLint configuration
+useReducer → for state management
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+useCallback → for memoized functions
+
+useEffect → for side effects and error logging
+
+Displays results in expandable details sections.
+
+Handles loading and error states.
+
+🌐 Demo
+
+Hosted App: [Insert your Vercel link]
+
+GitHub Repo: [Insert your GitHub link]
+
+⚡ Setup
+
+Clone the repo
+
+git clone <your-repo-link>
+cd <repo-folder>
+
+
+Install dependencies
+
+npm install
+
+
+Add environment variables
+
+VITE_GEMINI_API_KEY=YOUR_GOOGLE_API_KEY
+
+
+Get your API key here: Google Gemini API
+
+Run the app
+
+npm run dev
+
+🛠️ Technologies
+
+React (v18+)
+
+Google Gemini API
+
+Vite
+
+JSON for genre & mood data
+
+🔗 References
+
+Gemini API Docs
+
+React Hooks Guide
+
+💡 Notes
+
+Make sure your API key supports the generateText endpoint.
+
+Recommendations may fail if the model is unavailable or the API key is invalid.
